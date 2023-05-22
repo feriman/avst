@@ -1,3 +1,5 @@
+/* Print all ip subnets of a given IPv4 address. */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <arpa/inet.h>
