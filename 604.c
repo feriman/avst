@@ -14,12 +14,12 @@ main(int argc, char *argv[])
 
 	if (argc != 2) {
 		fprintf(stderr, "Usage: %s <xxx.xxx.xxx.xxx>\n", argv[0]);
-		return EXIT_FAILURE;
+		exit(EXIT_FAILURE);
 	}
 
 	if (inet_pton(AF_INET, argv[1], &addr) != 1) {
 		fprintf(stderr, "IPv4 address incorrect.\n");
-		return EXIT_FAILURE;
+		exit(EXIT_FAILURE);
 	}
 
 	for (i = 0; i < NBITS; i++) {
@@ -34,6 +34,6 @@ main(int argc, char *argv[])
 	inet_ntop(AF_INET, &addr, addr_str, INET_ADDRSTRLEN);
 	printf("%s/%u\n", addr_str, NBITS - i);
 
-	return EXIT_SUCCESS;
+	exit(EXIT_SUCCESS);
 }
 
